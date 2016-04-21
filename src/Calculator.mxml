@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" minWidth="955" minHeight="600" name="Tanvir Sajed">
+	
+	<fx:Script>
+		<![CDATA[
+			import ActionscriptClass.algo;
+			
+
+			protected function clickh(event:MouseEvent):void
+			{
+				//wtext.text = calc.text;
+				var calculator:algo = new algo(calc.text);
+				wtext.text = calculator.str;
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:TextInput x="132" y="194" id="calc" width="190"/>
+	<s:Button x="373" y="194" label="Calculate" click="clickh(event)" id="but" width="138"/>
+	<s:TextArea x="132" y="230" id="wtext" height="21" width="190" borderVisible="false" editable="false"/>
+	<s:TextArea x="130" y="10" id="mtext" editable="false" height="164" width="454" borderVisible="false" text="         Welcome to the Online Calculator&#xd;&#xd;This calculator only calculates numbers, not expressions. You can&#xd;use power with '^' and multiplication with '*'. However you are &#xd;allowed to use brackets between numbers such as (a)(b) or a(b) and&#xd;that will automatically serve the purpose of multiplication. Please&#xd;parenthesize well otherwise the calculation will not be right. This&#xd;calculator follows DMAS procedure without paranthesis. Please &#xd;let me know if you encounter any bugs or incorrect calculations&#xd;so that I can recheck my algorithm to fix the issue. Thanks"/>
+	<s:Label x="373" y="230" text=":   The Answer" width="138" height="25"/>
+	<s:TextArea x="132" y="368" height="73" borderVisible="false" editable="false" text="Programmed by:&#xd;Tanvir Sajed&#xd;University of Alberta&#xd;Edmonton, AB, Canada"/>
+	<mx:LinkButton x="345" y="368" label="Resume"/>
+</s:Application>
